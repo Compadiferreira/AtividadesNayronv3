@@ -1,26 +1,24 @@
 
 #include <stdio.h>
-#include <stdlib.h>
+
+
 void main(){    
 
- int A[6]= { 1,0,5,-2,-5,7},soma = 0;
+ int A[100],quantidade = 0;
 
- for (int i = 0; i < 6; i++)
+ for (int i = 1; i < 150; i++)
  {
-  if ((i == 0)|| (i==1)||(i==2))
-  {
-     soma = soma + A[i];
-  }
+   if (!(i % 7 ==0))
+   {
+     A[i] = i;
+    printf("%d \n",A[i]);
+    quantidade = quantidade + 1;
+   }                        //Por algum motivo a quantidade ta parando em 104,mesmo com break  tentando travar em 100,entao esta estourando o memoria apos o A[100],mas n sei
+   if (quantidade >= 100)
+   {
+    break;
+   }
  }
-  printf("A soma é : %d \n",soma);
-A[4] = 100;
-
-for (int i = 0; i < 6; i++)
-{
-    printf("%d\n",A[i]);
-}
-
-
-
-
+ 
+ printf("A quantidade de digitos nao multiplos de 7 são : %d ",quantidade);
 }
